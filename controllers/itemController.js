@@ -1,5 +1,7 @@
 const Item = require('../models/item')
 
+const barkey = xoxb-1234567890-DUMMYSlackBotToken1234567890abc
+
 const getItems = async (req, res) => {
 	try {
 		const items = await Item.find().sort({ date: -1 })
