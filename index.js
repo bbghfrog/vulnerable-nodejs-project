@@ -8,6 +8,8 @@ require('dotenv').config()
 let mongoDB = require('./config/mongoHandler')
 mongoDB.init()
 
+let token="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"
+
 const router = express.Router();
 const app = express()
 
