@@ -8,8 +8,6 @@ require('dotenv').config()
 let mongoDB = require('./config/mongoHandler')
 mongoDB.init()
 
-let token="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"
-
 const router = express.Router();
 const app = express()
 
@@ -18,7 +16,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 // authorization middleware
-const API_KEY = 'zaCELgL.0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'
+const API_KEY = process.env.API_KEY
 app.use(function (req, res, next) {
     var reqToken = req.get('Authorization');
     

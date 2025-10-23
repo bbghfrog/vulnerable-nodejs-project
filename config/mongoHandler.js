@@ -1,9 +1,7 @@
 var mongoose = require('mongoose');
 
 const init = async () => {
-    mongoose.set('useCreateIndex', true)
-    mongoose.set('useFindAndModify', false);
-    await mongoose.connect(process.env.MONGO_HOST, { useUnifiedTopology: true, useNewUrlParser: true })
+    await mongoose.connect(process.env.MONGO_HOST)
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', async function () {
